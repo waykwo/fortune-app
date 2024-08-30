@@ -28,4 +28,14 @@ class MyExamplesController < ApplicationController
       lotto_numbers: lotto_numbers.sort
     }
   end
+
+  def ninety_nine_bottles
+    ninety_nine_array = [] 
+    99.downto(1) do |number|
+      ninety_nine_array << "#{number} bottles of beer on the wall, #{number} bottles of beer... If one of those bottles happened to fall, #{number - 1} bottles of beer on the wall."
+    end
+
+    render json: {ninety_nine: ninety_nine_array}
+  end
+
 end
